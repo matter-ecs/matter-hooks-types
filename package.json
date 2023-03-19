@@ -1,0 +1,47 @@
+{
+	"name": "@rbxts/matter-hooks",
+	"version": "0.1.0",
+	"description": "A hooks library for Matter",
+	"scripts": {
+		"build": "rbxtsc",
+		"watch": "rbxtsc -w",
+		"prepublishOnly": "npm run build"
+	},
+	"keywords": [
+		"roblox-ts",
+		"roblox",
+		"typescript",
+		"matter",
+		"hooks"
+	],
+	"repository": "github:lasttalon/matter-hooks-types",
+	"homepage": "https://lasttalon.github.io/matter-hooks/",
+	"bugs": "https://github.com/LastTalon/matter-hooks-types/issues",
+	"author": "Lucas Gangstad <lucas@lasttalon.dev>",
+	"license": "MIT",
+	"main": "out/package/matter-hooks/init.lua",
+	"types": "out/package/matter-hooks/index.d.ts",
+	"files": [
+		"out",
+		"!**/*.tsbuildinfo"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@rbxts/matter": "^0.6.2-ts.6"
+	},
+	"devDependencies": {
+		"@rbxts/compiler-types": "^2.0.4-types.1",
+		"@rbxts/types": "^1.0.666",
+		"@typescript-eslint/eslint-plugin": "^5.55.0",
+		"@typescript-eslint/parser": "^5.55.0",
+		"eslint": "^8.36.0",
+		"eslint-config-prettier": "^8.7.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-roblox-ts": "^0.0.35",
+		"prettier": "^2.8.4",
+		"roblox-ts": "^2.1.0",
+		"typescript": "^5.0.2"
+	}
+}

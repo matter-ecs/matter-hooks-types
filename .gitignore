@@ -1,0 +1,14 @@
+# Roblox builds and artifacts
+*.rbxm
+*.rbxmx
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+
+# Roblox TS builds, artifacts, and packages
+/node_modules
+/out
+/include
+*.tsbuildinfo
+package-lock.json
