@@ -21,7 +21,7 @@ export type AsyncIncomplete = {
 
 export type AsyncReady<T> = AsyncComplete<T> | AsyncIncomplete;
 
-export function useAsync<T>(
+export default function useAsync<T>(
 	callback: () => T,
 	dependencies: unknown[],
 	discriminator?: unknown,

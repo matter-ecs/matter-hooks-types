@@ -19,8 +19,8 @@
 	"bugs": "https://github.com/LastTalon/matter-hooks-types/issues",
 	"author": "Lucas Gangstad <lucas@lasttalon.dev>",
 	"license": "MIT",
-	"main": "out/package/matter-hooks/init.lua",
-	"types": "out/package/matter-hooks/index.d.ts",
+	"main": "out/init.lua",
+	"types": "out/index.d.ts",
 	"files": [
 		"out",
 		"!**/*.tsbuildinfo"
