@@ -19,7 +19,7 @@ export type StreamOutEvent = {
 
 export type StreamEvent = StreamInEvent | StreamOutEvent;
 
-export function useStream(
+export default function useStream(
 	id: unknown,
 	options?: StreamOptions,
 ): () => LuaTuple<[number, StreamEvent]> | void;

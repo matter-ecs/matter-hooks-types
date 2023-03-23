@@ -3,7 +3,7 @@ export type ContextActionOptions = {
 	inputTypes?: (Enum.KeyCode | Enum.UserInputType)[];
 };
 
-export function useContextAction(
+export default function useContextAction(
 	actionName: string,
 	callback: (
 		actionName: string,

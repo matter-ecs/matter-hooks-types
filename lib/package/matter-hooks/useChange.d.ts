@@ -1,1 +1,1 @@
-export function useChange(dependencies: unknown[], discriminator?: unknown): boolean;
+export default function useChange(dependencies: unknown[], discriminator?: unknown): boolean;

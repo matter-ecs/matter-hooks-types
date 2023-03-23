@@ -1,4 +1,4 @@
-export function useReducer<S, A>(
+export default function useReducer<S, A>(
 	reducer: (state: S, action: A) => S,
 	initialState: S,
 	discriminator?: unknown,
