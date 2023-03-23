@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/matter-hooks",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A hooks library for Matter",
 	"scripts": {
 		"build": "rbxtsc",
