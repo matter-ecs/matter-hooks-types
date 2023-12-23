@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/matter-hooks",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A hooks library for Matter",
 	"scripts": {
 		"build": "rbxtsc",
@@ -29,7 +29,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@rbxts/matter": "^0.6.2-ts.6"
+		"@rbxts/matter": "0.6.2-ts.6 - 0.8"
 	},
 	"devDependencies": {
 		"@rbxts/compiler-types": "^2.0.4-types.1",
