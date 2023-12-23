@@ -29,7 +29,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@rbxts/matter": "^0.6.2-ts.6"
+		"@rbxts/matter": "^0.7.0"
 	},
 	"devDependencies": {
 		"@rbxts/compiler-types": "^2.0.4-types.1",
