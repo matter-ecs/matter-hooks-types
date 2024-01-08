@@ -1,4 +1,4 @@
-yp# Matter Hooks Types Changelog
+# Matter Hooks Types Changelog
 
 All notable changes to this project will be documented in this file.
 
