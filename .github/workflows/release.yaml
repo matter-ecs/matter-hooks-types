@@ -8,6 +8,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Project
         uses: actions/checkout@v3
@@ -15,9 +17,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Matter Hooks Types ${{ github.ref }}
+          name: Matter Hooks Types ${{ github.ref_name }}
           body: |
-            Matter Hooks Types ${{ github.ref }} is now available!
+            Matter Hooks Types ${{ github.ref_name }} is now available!
 
   publish:
     name: Publish
