@@ -194,9 +194,11 @@ local function useStream(id: unknown, options: StreamOptions?): () -> (number?, 
 					storage.queue:push(streamInEvent(instance, true))
 				end),
 
-				removingConnection = instance.DescendantRemoving:Connect(function(instance: Instance)
-					storage.queue:push(streamOutEvent(instance, true))
-				end),
+				removingConnection = instance.DescendantRemoving:Connect(
+					function(instance: Instance)
+						storage.queue:push(streamOutEvent(instance, true))
+					end
+				),
 			}
 
 			for _, descendant in instance:GetDescendants() do
@@ -204,29 +206,31 @@ local function useStream(id: unknown, options: StreamOptions?): () -> (number?, 
 			end
 		end)
 
-		storage.removingConnection = Workspace.DescendantRemoving:Connect(function(instance: Instance)
-			if instance:GetAttribute(options.attribute) ~= id then
-				return
+		storage.removingConnection = Workspace.DescendantRemoving:Connect(
+			function(instance: Instance)
+				if instance:GetAttribute(options.attribute) ~= id then
+					return
+				end
+
+				storage.queue:push(streamOutEvent(instance))
+
+				if not options.descendants then
+					return
+				end
+
+				for _, descendant in instance:GetDescendants() do
+					storage.queue:push(streamOutEvent(descendant, true))
+				end
+
+				local connections = storage.trackedInstances[instance]
+				if not connections then
+					return
+				end
+
+				connections.addedConnection:Disconnect()
+				connections.removingConnection:Disconnect()
 			end
-
-			storage.queue:push(streamOutEvent(instance))
-
-			if not options.descendants then
-				return
-			end
-
-			for _, descendant in instance:GetDescendants() do
-				storage.queue:push(streamOutEvent(descendant, true))
-			end
-
-			local connections = storage.trackedInstances[instance]
-			if not connections then
-				return
-			end
-
-			connections.addedConnection:Disconnect()
-			connections.removingConnection:Disconnect()
-		end)
+		)
 	end
 
 	local index = 0
